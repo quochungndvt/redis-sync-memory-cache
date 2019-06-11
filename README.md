@@ -9,15 +9,23 @@ BTW memory caches in decentralized system have some challenges
 
 This module implement Techniques for Synchronizing In-Memory Caches with Redis
 
+### Documentation
+-------------
+
+- [API Reference](https://godoc.org/github.com/quochungndvt/redis-sync-memory-cache/rsmemory)
+
 ### Installation
+-------------
+
 Install using the "go get" command:
 
   go get github.com/quochungndvt/redis-sync-memory-cache
   
   
 ### Examples
+-------------
 
-try this [example](github.com/quochungndvt/redis-sync-memory-cache/tree/master/examples/server)
+try this [example](https://github.com/quochungndvt/redis-sync-memory-cache/tree/master/examples/server)
 - server1: go run main.go -port 8081
 - server2: go run main.go -port 8082
 
