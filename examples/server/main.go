@@ -35,7 +35,7 @@ func main() {
 			return
 		}
 
-		key := fmt.Sprintf("App:Employment:%d", person.ID)
+		key := fmt.Sprintf("test-sync-memory-cache:%d", person.ID)
 		data, t := multiLevelCache.Get(key)
 
 		c.JSON(200, gin.H{"mess": person.Mess, "id": person.ID, "cache": data, "action": t})
@@ -50,7 +50,7 @@ func main() {
 			return
 		}
 
-		key := fmt.Sprintf("App:Employment:%d", person.ID)
+		key := fmt.Sprintf("test-sync-memory-cache:%d", person.ID)
 		//get data from redis
 		data, err := multiLevelCache.GetRedisService().GetCacheFromRedis(key)
 
@@ -62,7 +62,7 @@ func main() {
 			c.JSON(400, gin.H{"msg": err})
 			return
 		}
-		key := fmt.Sprintf("App:Employment:%d", person.ID)
+		key := fmt.Sprintf("test-sync-memory-cache:%d", person.ID)
 		multiLevelCache.Set(key, person.Mess)
 		// data, t := multiLevelCache.Get(key)
 		c.JSON(200, gin.H{"mess": person.Mess, "id": person.ID, "cache": person.Mess})
