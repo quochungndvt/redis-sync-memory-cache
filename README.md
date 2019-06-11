@@ -9,13 +9,23 @@ BTW memory caches in decentralized system have some challenges
 
 This module implement Techniques for Synchronizing In-Memory Caches with Redis
 
-examples: redis-sync-memory-cache/examples/server
-server1: go run main.go -port 8081
-server2: go run main.go -port 8082
-open in browser 
+### Installation
+Install using the "go get" command:
+
+  go get github.com/quochungndvt/redis-sync-memory-cache
+  
+  
+### Examples
+
+try this [example](github.com/quochungndvt/redis-sync-memory-cache/tree/master/examples/server)
+- server1: go run main.go -port 8081
+- server2: go run main.go -port 8082
+
+Open in browser 
+
 - A: http://localhost:8081/read/1/1
 - B: http://localhost:8082/read/1/1
-- http://localhost:8081/write/1/update
+- Update cache http://localhost:8081/write/1/update
 refresh A, B and see
 
 
