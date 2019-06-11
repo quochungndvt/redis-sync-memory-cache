@@ -1,4 +1,4 @@
-module github.com/quochungndvt/redis-sync-memory-cache
+module github.com/quochungndvt/redis-sync-memory-cache/rsmemory
 
 go 1.12
 
