@@ -1,4 +1,4 @@
-module redis-sync-memory-cache
+module github.com/quochungndvt/redis-sync-memory-cache
 
 go 1.12
 
