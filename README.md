@@ -19,7 +19,7 @@ This module implement Techniques for Synchronizing In-Memory Caches with Redis
 
 Install using the "go get" command:
 
-  go get github.com/quochungndvt/redis-sync-memory-cache
+  go get github.com/quochungndvt/redis-sync-memory-cache/rsmemory
   
   
 ### Examples
