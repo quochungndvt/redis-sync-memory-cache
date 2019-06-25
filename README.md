@@ -37,3 +37,7 @@ Open in browser
 refresh A, B and see
 
 
+### Feature
+-------------
+- Support more Redis type
+- Support cache expire

@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"time"
 
 	"github.com/gin-gonic/gin"
 	"github.com/quochungndvt/redis-sync-memory-cache/rsmemory"
@@ -67,5 +68,33 @@ func main() {
 		// data, t := multiLevelCache.Get(key)
 		c.JSON(200, gin.H{"mess": person.Mess, "id": person.ID, "cache": person.Mess})
 	})
+	r.GET("/test", func(c *gin.Context) {
+		t := do_some_thing()
+		c.JSON(200, gin.H{"t": t})
+	})
 	r.Run(fmt.Sprintf("0.0.0.0:%s", *port)) // listen and serve on 0.0.0.0:8080
+}
+func do_some_thing() string {
+	messages := make(chan string)
+
+	go func() {
+		time.Sleep(1 * time.Second)
+		messages <- "ping"
+	}()
+
+	//sleep 1
+	go goroutine(1)
+	//sleep 2
+	go goroutine(2)
+	//sleep 3
+	go goroutine(3)
+	//sleep 4
+	go goroutine(4)
+	msg := <-messages
+	fmt.Println(msg)
+	return msg
+}
+func goroutine(t int) {
+	time.Sleep(time.Duration(t) * time.Second)
+	fmt.Println("pong", t, time.Now().Nanosecond())
 }
