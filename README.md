@@ -9,6 +9,8 @@ BTW memory caches in decentralized system have some challenges
 
 This module implement Techniques for Synchronizing In-Memory Caches with Redis
 
+![GitHub Logo](/diagram.png)\
+
 ### Documentation
 -------------
 
